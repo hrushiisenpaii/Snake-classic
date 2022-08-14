@@ -33,13 +33,13 @@ function checkHitWall() {
     let headTail = snake.tail[snake.tail.length -1]
 
     if (headTail.x == - snake.size) {
-        headTail.x = canvas.width - snake.size
+        headTail.x = canvas.width - snake.size;
     } else if (headTail.x == canvas.width) {
-        headTail.x = 0
+        headTail.x = 0;
     } else if (headTail.y == - snake.size) {
-        headTail.y = canvas.height - snake.size
+        headTail.y = canvas.height - snake.size;
     } else if (headTail.y == canvas.height) {
-        headTail.y = 0 
+        headTail.y = 0 ;
     }
 }
 
@@ -65,16 +65,16 @@ function createRect(x,y,width, height,color) {
 
 window.addEventListener("keydown", (event) => {
     setTimeout(() => {
-        if (event.keyCode == 37 && snake.rotateX != 1) {
+        if (event.keyCode == 65 && snake.rotateX != 1) {
             snake.rotateX = -1
             snake.rotateY = 0
-        } else if (event.keyCode == 38 && snake.rotateY != 1) {
+        } else if (event.keyCode == 87 && snake.rotateY != 1) {
             snake.rotateX = 0
             snake.rotateY = -1
-        } else if (event.keyCode == 39 && snake.rotateX != -1) {
+        } else if (event.keyCode == 68 && snake.rotateX != -1) {
             snake.rotateX = 1
             snake.rotateY = 0
-        } else if (event.keyCode == 40 && snake.rotateY != -1) {
+        } else if (event.keyCode == 83 && snake.rotateY != -1) {
             snake.rotateX = 0
             snake.rotateY = 1
         }
@@ -122,6 +122,8 @@ class Snake {
 }
 
 class Apple{
+
+
     constructor(){
         let isTouching
         
@@ -137,7 +139,8 @@ class Apple{
             }
 
             this.size = snake.size
-            this.color = "red"
+            this.color = "#B03A2E"
+           
 
             if (!isTouching) {
                 break;
